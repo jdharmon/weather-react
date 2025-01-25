@@ -3,7 +3,7 @@ import moment from 'moment-timezone'
 import {Event} from '../utils/ReactAnalytics'
 
 const ThemeContext = React.createContext({
-  theme: 'light',
+  theme: 'dark',
   toggleTheme: () => {}
 })
 
@@ -17,7 +17,7 @@ const emitGA = theme => {
 }
 
 const ThemeContextProvider = ({children}) => {
-  const [theme, setTheme] = useState('')
+  const [theme, setTheme] = useState('dark')
   const colorTheme = theme === 'light' ? 'dark' : 'light'
 
   const toggleTheme = () => {
@@ -45,9 +45,7 @@ const ThemeContextProvider = ({children}) => {
   useEffect(() => {
     // set theme based on the time on initial application load and
     // when there is no theme preference in the localStorage
-    if (!localStorage.getItem('theme')) {
-      daynightChecker()
-    } else {
+    if (localStorage.getItem('theme')) {
       setTheme(JSON.parse(localStorage.getItem('theme')))
     }
     // eslint-disable-next-line
