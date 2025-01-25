@@ -32,8 +32,8 @@ const WeatherForecastContainer = ({
   }
 
   const imageBorder = {
-    borderTopLeftRadius: '1rem',
-    borderTopRightRadius: '1rem',
+    borderTopLeftRadius: '0rem',
+    borderTopRightRadius: '0rem',
   }
 
   const [showAlerts, setShowAlerts] = useState(true)
@@ -45,7 +45,7 @@ const WeatherForecastContainer = ({
   return (
     <Fragment>
       <div
-        className={'flex flex-col justify-center items-center lg:px-5 pt-10'}>
+        className={'flex flex-col justify-center items-center'}>
         <div
           className={`sm:w-full lg:w-5/6 xl:max-w-6xl bg-${theme} text-${colorTheme} border border-${colorTheme} md:border-none rounded-t-2xl shadow-lg`}>
           <div className='relative overflow-hidden'>
@@ -106,19 +106,7 @@ const WeatherForecastContainer = ({
       </div>
 
       <div className='relative'>
-        <p
-          className={`mx-auto text-center pt-2 pb-10 text-xs font-light text-${colorTheme} bg-${theme}`}>
-          Weather data provided by&nbsp;
-          <a
-            href='https://openweathermap.org/'
-            target='_blank'
-            rel='noreferrer noopener'
-            className={`link z-0 font-medium hover:text-${theme}`}
-            onClick={() => emitGA('provided-by', 'OpenWeather')}>
-            OpenWeather
-          </a>
-        </p>
-
+ 
         {/* weather alerts */}
         {!isEmpty(alerts) ? (
           <Fragment>

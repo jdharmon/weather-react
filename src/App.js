@@ -18,16 +18,10 @@ const App = () => {
   return (
     <div className={`bg-${theme} tracking-wider border-box wrapper`}>
       <div>
-        <HeaderComponent />
-      </div>
-      <div>
         <Suspense
           fallback={<LoaderComponent loaderText='Loading components' />}>
           <HomeContainer />
         </Suspense>
-      </div>
-      <div>
-        <FooterComponent />
       </div>
     </div>
   )

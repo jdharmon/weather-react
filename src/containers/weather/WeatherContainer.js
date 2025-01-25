@@ -134,7 +134,6 @@ const WeatherContainer = () => {
                     address={addressContext}
                     latlong={addressContext.latlong}
                   />
-                  <WindyContainer />
                 </Fragment>
               ) : null}
             </Fragment>
